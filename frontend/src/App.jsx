@@ -48,7 +48,7 @@ function App() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
+    fetch("https://back-end-shop-quan-ao.onrender.com")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -59,7 +59,7 @@ function App() {
   }, []);
 
   const fetchOrders = () => {
-    fetch("http://localhost:5000/api/orders")
+    fetch("https://back-end-shop-quan-ao.onrender.com")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -87,7 +87,7 @@ function App() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch("https://back-end-shop-quan-ao.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -134,7 +134,7 @@ function App() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch("https://back-end-shop-quan-ao.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -183,7 +183,7 @@ function App() {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/products/${productId}`, {
+      const res = await fetch(`https://back-end-shop-quan-ao.onrender.com`, {
         method: "DELETE",
       });
 
@@ -273,7 +273,7 @@ function App() {
 
       if (editingProductId) {
         res = await fetch(
-          `http://localhost:5000/api/products/${editingProductId}`,
+          `https://back-end-shop-quan-ao.onrender.com`,
           {
             method: "PUT",
             headers: {
@@ -283,7 +283,7 @@ function App() {
           }
         );
       } else {
-        res = await fetch("http://localhost:5000/api/products", {
+        res = await fetch("https://back-end-shop-quan-ao.onrender.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -445,7 +445,7 @@ function App() {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders", {
+      const res = await fetch("https://back-end-shop-quan-ao.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
