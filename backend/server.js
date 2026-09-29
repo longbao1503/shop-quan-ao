@@ -19,7 +19,7 @@ app.use("/api/auth", authRoutes);
 const PORT = 5000;
 
 mongoose
-  .connect("mongodb://localhost:27017/web-ban-quan-ao")
+  .connect("mongodb+srv://tranlongbao03_db_user:AjmRAxQ8iSAEqw1p@cluster0.u9tr3lq.mongodb.net/web-ban-quan-ao?appName=Cluster0")
   .then(() => {
     console.log("Ket noi MongoDB thanh cong");
   })
