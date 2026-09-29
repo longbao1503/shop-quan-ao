@@ -48,7 +48,7 @@ function App() {
   });
 
   useEffect(() => {
-    fetch("https://back-end-shop-quan-ao.onrender.com")
+    fetch("https://back-end-shop-quan-ao.onrender.com/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -59,7 +59,7 @@ function App() {
   }, []);
 
   const fetchOrders = () => {
-    fetch("https://back-end-shop-quan-ao.onrender.com")
+    fetch("https://back-end-shop-quan-ao.onrender.com/api/orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -87,7 +87,7 @@ function App() {
     }
 
     try {
-      const res = await fetch("https://back-end-shop-quan-ao.onrender.com", {
+      const res = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -134,7 +134,7 @@ function App() {
     }
 
     try {
-      const res = await fetch("https://back-end-shop-quan-ao.onrender.com", {
+      const res = await fetch("https://back-end-shop-quan-ao.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -183,7 +183,7 @@ function App() {
     }
 
     try {
-      const res = await fetch(`https://back-end-shop-quan-ao.onrender.com`, {
+      const res = await fetch(`https://back-end-shop-quan-ao.onrender.com/api/products/${productId}`, {
         method: "DELETE",
       });
 
@@ -273,7 +273,7 @@ function App() {
 
       if (editingProductId) {
         res = await fetch(
-          `https://back-end-shop-quan-ao.onrender.com`,
+          `https://back-end-shop-quan-ao.onrender.com/api/products/${editingProductId}`,
           {
             method: "PUT",
             headers: {
@@ -283,7 +283,7 @@ function App() {
           }
         );
       } else {
-        res = await fetch("https://back-end-shop-quan-ao.onrender.com", {
+        res = await fetch("https://back-end-shop-quan-ao.onrender.com/api/products", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -445,7 +445,7 @@ function App() {
     };
 
     try {
-      const res = await fetch("https://back-end-shop-quan-ao.onrender.com", {
+      const res = await fetch("https://back-end-shop-quan-ao.onrender.com/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
